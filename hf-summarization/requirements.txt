@@ -1,0 +1,6 @@
+# https://download.pytorch.org/whl/cpu/torch-1.10.1-cp38-cp38-manylinux2014_aarch64.whl
+
+--find-links  https://download.pytorch.org/whl/torch_stable.html
+ 
+torch==1.10.1
+transformers==4.7.0
