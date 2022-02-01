@@ -6,7 +6,7 @@ Description: >
   SAM Template for HF Summarization Inference
 
 Resources:
-  SummarizationIndoInferenceFunction:
+  InferenceFunction:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
     Properties:
       PackageType: Image
@@ -28,11 +28,11 @@ Resources:
 
 Outputs:
   Function:
-    Description: "SummarizationIndoInference Lambda Function ARN"
-    Value: !GetAtt SummarizationIndoInferenceFunction.Arn
+    Description: "InferenceFunction Lambda Function ARN"
+    Value: !GetAtt InferenceFunction.Arn
   IAMRole:
-    Description: "Implicit IAM Role created for SummarizationIndoInference function"
-    Value: !GetAtt SummarizationIndoInferenceFunctionRole.Arn
+    Description: "Implicit IAM Role created for InferenceFunction function"
+    Value: !GetAtt InferenceFunctionRole.Arn
   APIEndpoint:
     Description: "API Prod stage endpoint"
     Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/"
