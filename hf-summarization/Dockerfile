@@ -1,10 +1,10 @@
-FROM public.ecr.aws/lambda/python:3.8
+FROM huggingface/transformers-pytorch-cpu
 
-COPY requirements.txt ./requirements.txt
+# COPY requirements.txt ./requirements.txt
 
 # RUN python3 -m pip install --upgrade pip
-RUN python3 -m pip install wheel
-RUN python3 -m pip install -r requirements.txt 
+# RUN python3 -m pip install wheel
+# RUN python3 -m pip install -r requirements.txt 
 
 COPY ./   ./
 

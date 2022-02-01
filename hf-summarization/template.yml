@@ -20,13 +20,11 @@ Resources:
       DockerContext: .
       Dockerfile: Dockerfile
     Events:
-        MySQSEvent:
-          Type: SQS
+        HttpPost:
+          Type: Api
           Properties:
-            Queue: !GetAtt SummarizationIndo.Arn
-            BatchSize: 10
-  SummarizationIndoQueue:
-    Type: AWS::SQS::Queue
+            Path: '/summarize'
+            Method: post
 
 Outputs:
   Bert:
