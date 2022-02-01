@@ -21,6 +21,7 @@ Resources:
           Properties:
             Path: '/summarize'
             Method: post
+            StageName: prod
 
     Metadata:
       DockerTag: python3.8-v1
@@ -31,6 +32,9 @@ Outputs:
   Bert:
     Description: "SummarizationIndoInference Lambda Function ARN"
     Value: !GetAtt SummarizationIndoInferenceFunction.Arn
-  SummarizationIndoInferenceFunctionIamRole:
+  FunctionIAMRole:
     Description: "Implicit IAM Role created for SummarizationIndoInference function"
     Value: !GetAtt SummarizationIndoInferenceFunctionRole.Arn
+  APIEndpoint:
+    Description: "API Prod stage endpoint"
+    Value: !Sub "https://${HttpPost}.execute-api.${AWS::Region}.amazonaws.com/prod/"
