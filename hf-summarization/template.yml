@@ -21,7 +21,6 @@ Resources:
           Properties:
             Path: '/summarize'
             Method: post
-            StageName: Prod
 
     Metadata:
       DockerTag: python3.8-v1
