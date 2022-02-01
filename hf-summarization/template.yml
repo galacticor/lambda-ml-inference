@@ -3,7 +3,7 @@ Transform: AWS::Serverless-2016-10-31
 Description: >
   pytorch-inference-docker-lambda
 
-  SAM Template for UlasKelas HateSpeech Inference
+  SAM Template for HF Summarization Inference
 
 Resources:
   SummarizationIndoInferenceFunction:
@@ -15,16 +15,17 @@ Resources:
       Environment:
         Variables:
           DEBUG: 1
-    Metadata:
-      DockerTag: python3.8-v1
-      DockerContext: .
-      Dockerfile: Dockerfile
-    Events:
+      Events:
         HttpPost:
           Type: Api
           Properties:
             Path: '/summarize'
             Method: post
+
+    Metadata:
+      DockerTag: python3.8-v1
+      DockerContext: .
+      Dockerfile: Dockerfile
 
 Outputs:
   Bert:
