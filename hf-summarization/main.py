@@ -1,6 +1,6 @@
 from transformers import T5Tokenizer, T5ForConditionalGeneration
 
-tokenizer = T5Tokenizer.from_pretrained("panggi/t5-small-indonesian-summarization-cased")
+tokenizer = T5Tokenizer.from_pretrained("./pipeline/")
 model = T5ForConditionalGeneration.from_pretrained("panggi/t5-small-indonesian-summarization-cased")
 
 
