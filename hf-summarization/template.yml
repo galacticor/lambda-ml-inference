@@ -19,10 +19,10 @@ Resources:
         HttpPost:
           Type: Api
           Properties:
-            Path: '/summarize'
-            Method: post
+            Path: /{proxy+}
++           Method: ANY
     Metadata:
-      DockerTag: python3.8-v1
+      DockerTag: python3.8-v2
       DockerContext: .
       Dockerfile: Dockerfile
 
