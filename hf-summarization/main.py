@@ -7,7 +7,7 @@ tracer = Tracer()
 logger = Logger()
 cors_config = CORSConfig(allow_origin="*", max_age=300)
 app = ApiGatewayResolver(
-    proxy_type=ProxyEventType.APIGatewayProxyEventV2,
+    # proxy_type=ProxyEventType.APIGatewayProxyEventV2,
     cors=cors_config
 )
 
