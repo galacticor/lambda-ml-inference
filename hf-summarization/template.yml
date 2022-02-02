@@ -20,7 +20,7 @@ Resources:
           Type: Api
           Properties:
             Path: /{proxy+}
-+           Method: ANY
+            Method: ANY
     Metadata:
       DockerTag: python3.8-v2
       DockerContext: .
